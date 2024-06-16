@@ -1,7 +1,7 @@
 import Board from "../entity/Board";
+import pgp from "pg-promise";
 import "dotenv/config";
 import "dotenv-expand/config";
-import pgp from "pg-promise";
 
 export default class BoardService {
   constructor() {}
