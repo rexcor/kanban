@@ -1,4 +1,4 @@
-import Column from "../entity/Column";
+import Column from "../domain/entity/Column";
 import pgp from "pg-promise";
 
 export default class ColumnService {

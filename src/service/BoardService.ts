@@ -1,4 +1,4 @@
-import Board from "../entity/Board";
+import Board from "../domain/entity/Board";
 import pgp from "pg-promise";
 import "dotenv/config";
 import "dotenv-expand/config";

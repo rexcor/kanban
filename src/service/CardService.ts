@@ -1,4 +1,4 @@
-import Card from "../entity/Card";
+import Card from "../domain/entity/Card";
 import pgp from "pg-promise";
 
 export default class CardService {

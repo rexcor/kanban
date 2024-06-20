@@ -4,8 +4,11 @@ import "dotenv-expand/config";
 import BoardService from "./service/BoardService";
 import ColumnService from "./service/ColumnService";
 import CardService from "./service/CardService";
+import PgPromiseConnection from "./infra/database/PgPromiseConnection";
 
 const app = express();
+
+const connection = new PgPromiseConnection();
 
 app.get("/boards", async function (request, response) {
   const boardService = new BoardService();
