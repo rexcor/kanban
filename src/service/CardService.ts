@@ -1,20 +1,12 @@
 import Card from "../domain/entity/Card";
 import pgp from "pg-promise";
+import CardRepository from "../domain/repository/CardRepository";
 
 export default class CardService {
-  constructor() {}
+  constructor(readonly cardRepository: CardRepository) {}
 
   async getCards(idColumn: number) {
-    const connection = pgp()(`${process.env.DATABASE_URL}`);
-    const cardsData = await connection.query(
-      "select title, estimative from kanban.card where id_column = $1",
-      [idColumn]
-    );
-    const cards: Card[] = [];
-    for (const cardData of cardsData) {
-      cards.push(new Card(cardData.title, cardData.estimative));
-    }
-    await connection.$pool.end();
+    const cards = await this.cardRepository.findAllByIdColumn(idColumn);
     return cards;
   }
 }
