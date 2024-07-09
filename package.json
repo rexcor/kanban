@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "yarn run services:up && npx nodemon src/main.ts",
+    "services:up": "docker compose -f src/infra/compose.yaml up -d"
   },
   "keywords": [],
   "author": "",

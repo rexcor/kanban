@@ -1,6 +1,8 @@
-drop table kanban.card;
-drop table kanban.column;
-drop table kanban.board;
+CREATE SCHEMA kanban;
+
+drop table if exists kanban.card;
+drop table if exists kanban.column;
+drop table if exists kanban.board;
 
 CREATE TABLE kanban.board (
     id_board serial PRIMARY KEY,

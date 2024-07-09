@@ -1,0 +1,10 @@
+services:
+  database:
+    container_name: "fullstack-branas"
+    image: "postgres:16.0-alpine3.18"
+    env_file:
+      - ../../.env
+    volumes:
+      - ./configs:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
