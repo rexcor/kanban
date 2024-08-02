@@ -1,3 +1,5 @@
+import "dotenv/config";
+import "dotenv-expand/config";
 import ColumnRepository from "../domain/repository/ColumnRepository";
 
 export default class ColumnService {
